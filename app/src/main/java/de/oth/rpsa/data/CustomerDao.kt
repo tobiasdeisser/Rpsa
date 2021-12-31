@@ -16,7 +16,6 @@ interface CustomerDao {
     suspend fun deleteCustomer(customer: Customer)
 
     @Query("SELECT * FROM Customer ORDER BY id")
-    fun readData(): LiveData<List<Customer>>
-
+    fun getAllCustomers(): LiveData<List<Customer>>
 
 }

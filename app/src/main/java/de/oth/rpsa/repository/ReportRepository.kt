@@ -6,7 +6,7 @@ import de.oth.rpsa.model.Report
 
 class ReportRepository (private val reportDao: ReportDao) {
 
-    val readData: LiveData<List<Report>> = reportDao.readData()
+    val allReports: LiveData<List<Report>> = reportDao.getAllReports()
 
     suspend fun addReport(report: Report){
         reportDao.addReport(report)

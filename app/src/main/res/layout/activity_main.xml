@@ -1,23 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="15dp"
-    android:orientation="vertical"
-    tools:context=".RpsaMainViewModel">
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+       <variable
+           name="customerViewModel"
+           type="de.oth.rpsa.viewModel.CustomerViewModel" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="380dp"
-        android:layout_height="700dp"
-        app:defaultNavHost="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/navigation" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        tools:context=".RpsaMainViewModel">
+
+        <EditText
+            android:id="@+id/lastName_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:text="@={customerViewModel.inputLastName}"
+            android:hint="lastName"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/firstName_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:text="@={customerViewModel.inputFirstName}"
+            android:hint="firstName"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/telephone_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:text="@={customerViewModel.inputTelephone}"
+            android:hint="telephone"
+            android:inputType="numberSigned" />
+
+        <EditText
+            android:id="@+id/eMail_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:text="@={customerViewModel.inputemail}"
+            android:hint="email"
+            android:inputType="textPersonName" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/save_or_update_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#47AE10"
+                android:onClick="@{() -> customerViewModel.saveOrUpdate()}"
+                android:text="@={customerViewModel.saveOrUpdateButtonText}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/clear_or_delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#47AE10"
+                android:text="@={customerViewModel.clearAllOrDeleteButtonText}"
+                android:onClick="@{() -> customerViewModel.clearAllOrDelete()}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/customerRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
+
+    </LinearLayout>
+</layout>

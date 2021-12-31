@@ -17,7 +17,7 @@ interface ReportDao {
     suspend fun deleteReport(report: Report)
 
     @Query("SELECT * FROM Report ORDER BY reportID")
-    fun readData(): LiveData<List<Report>>
+    fun getAllReports(): LiveData<List<Report>>
 
 
 }

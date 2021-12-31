@@ -7,7 +7,7 @@ import de.oth.rpsa.model.Customer
 class CustomerRepository (private val customerDao: CustomerDao){
 
 
-    val readData: LiveData<List<Customer>> = customerDao.readData()
+    val allCustomers: LiveData<List<Customer>> = customerDao.getAllCustomers()
 
     suspend fun addCustomer(customer: Customer){
         customerDao.addCustomer(customer)
