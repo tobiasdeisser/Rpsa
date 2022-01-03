@@ -2,7 +2,6 @@ package de.oth.rpsa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Switch
 import android.widget.Toast

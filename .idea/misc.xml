@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Tobia/AndroidStudioProjects/Rspa/app/src/main/res/drawable/buttonstyle.xml" value="0.32135416666666666" />
         <entry key="..\:/Users/Tobia/AndroidStudioProjects/Rspa/app/src/main/res/layout/activity_main.xml" value="0.37273550724637683" />
+        <entry key="..\:/Users/Tobia/AndroidStudioProjects/Rspa/app/src/main/res/layout/customer_view.xml" value="0.30520833333333336" />
         <entry key="..\:/Users/Tobia/AndroidStudioProjects/Rspa/app/src/main/res/layout/customizedrow.xml" value="0.5142857142857143" />
+        <entry key="..\:/Users/Tobia/AndroidStudioProjects/Rspa/app/src/main/res/layout/dropdown_item.xml" value="0.2453125" />
         <entry key="..\:/Users/Tobia/AndroidStudioProjects/Rspa/app/src/main/res/layout/fragment_add.xml" value="0.25885416666666666" />
         <entry key="..\:/Users/Tobia/AndroidStudioProjects/Rspa/app/src/main/res/layout/fragment_list.xml" value="0.25885416666666666" />
         <entry key="..\:/Users/Tobia/AndroidStudioProjects/Rspa/app/src/main/res/layout/listcustomers.xml" value="0.25885416666666666" />
