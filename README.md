@@ -70,7 +70,7 @@ i´ve added this package if programmable customizing to the view needs to be add
 
 
 Communication:
-The Communication for DataBinding and LiveData happens in the CustomerViewModel.kt. The annotation @Bindable provides functions to get access to LiveData changes. The input validation and LiveData updates for the customer data and  the Add/Update and Clear/Delete buttons also happens in this class.
+The Communication for DataBinding, LiveData and Coroutines happens in the CustomerViewModel.kt. The annotation @Bindable provides functions to get access to LiveData changes. The input validation and LiveData updates for the customer data and  the Add/Update and Clear/Delete buttons also happens in this class.
 ![image](https://user-images.githubusercontent.com/91883770/147930098-fb9bdc23-e555-43aa-a4ce-261ca7055991.png)
 
 
