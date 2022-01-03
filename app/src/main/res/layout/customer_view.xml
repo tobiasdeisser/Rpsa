@@ -2,19 +2,27 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <data>
-       <variable
-           name="customerViewModel"
-           type="de.oth.rpsa.viewModel.CustomerViewModel" />
 
+    <data>
+        <variable
+            name="customerViewModel"
+            type="de.oth.rpsa.viewModel.CustomerViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp"
+        android:layout_margin="3dp"
         android:orientation="vertical"
         tools:context=".RpsaMainViewModel">
+
+        <Switch
+            android:id="@+id/switch_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="5dp"
+            android:text="@string/switchtext" />
 
         <EditText
             android:id="@+id/lastName_text"
@@ -23,9 +31,9 @@
             android:layout_margin="5dp"
             android:layout_marginBottom="5dp"
             android:ems="10"
-            android:text="@={customerViewModel.inputLastName}"
-            android:hint="lastName"
-            android:inputType="textPersonName" />
+            android:hint="@string/lastname"
+            android:inputType="textPersonName"
+            android:text="@={customerViewModel.inputLastName}" />
 
         <EditText
             android:id="@+id/firstName_text"
@@ -35,9 +43,9 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:ems="10"
-            android:text="@={customerViewModel.inputFirstName}"
-            android:hint="firstName"
-            android:inputType="textPersonName" />
+            android:hint="@string/firstname"
+            android:inputType="textPersonName"
+            android:text="@={customerViewModel.inputFirstName}" />
 
         <EditText
             android:id="@+id/telephone_text"
@@ -46,9 +54,9 @@
             android:layout_margin="5dp"
             android:layout_marginBottom="5dp"
             android:ems="10"
-            android:text="@={customerViewModel.inputTelephone}"
-            android:hint="telephone"
-            android:inputType="numberSigned" />
+            android:hint="@string/telephone"
+            android:inputType="numberSigned"
+            android:text="@={customerViewModel.inputTelephone}" />
 
         <EditText
             android:id="@+id/eMail_text"
@@ -57,9 +65,26 @@
             android:layout_margin="5dp"
             android:layout_marginBottom="5dp"
             android:ems="10"
-            android:text="@={customerViewModel.inputemail}"
-            android:hint="email"
-            android:inputType="textPersonName" />
+            android:hint="@string/email"
+            android:inputType="textPersonName"
+            android:text="@={customerViewModel.inputemail}" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <AutoCompleteTextView
+                android:id="@+id/vehicle_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="textAutoComplete"
+                android:hint="@string/vehicle"
+                android:text="@={customerViewModel.inputVehicle}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,13 +92,13 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/save_or_update_button"
+                android:id="@+id/add_or_update_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#47AE10"
-                android:onClick="@{() -> customerViewModel.saveOrUpdate()}"
-                android:text="@={customerViewModel.saveOrUpdateButtonText}"
+                android:background="@drawable/buttonstyle"
+                android:onClick="@{() -> customerViewModel.addOrUpdate()}"
+                android:text="@={customerViewModel.addOrUpdateButtonText}"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -83,9 +108,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#47AE10"
-                android:text="@={customerViewModel.clearAllOrDeleteButtonText}"
+                android:background="@drawable/buttonstyle"
                 android:onClick="@{() -> customerViewModel.clearAllOrDelete()}"
+                android:text="@={customerViewModel.clearAllOrDeleteButtonText}"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />

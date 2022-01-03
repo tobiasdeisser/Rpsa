@@ -1,5 +1,16 @@
 <resources>
-    <string name="app_name">Rpsa</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">parking spaces administration</string>
+    <string-array name="vehicles">
+        <item>car</item>
+        <item>caravan</item>
+        <item>camper</item>
+        <item>boat</item>
+    </string-array>
+    <string name="switchtext">switch to dark mode</string>
+    <string name="lastname">last Name</string>
+    <string name="firstname">first Name</string>
+    <string name="telephone">telephone</string>
+    <string name="email">email address</string>
+    <string name="vehicle">choose a vehicle</string>
+
 </resources>

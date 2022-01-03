@@ -6,16 +6,20 @@ import de.oth.rpsa.model.Customer
 
 @Dao
 interface CustomerDao {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun addCustomer(customer: Customer)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun addCustomer(customer: Customer) : Long
 
     @Update
-    suspend fun updateCustomer(customer: Customer)
+    suspend fun updateCustomer(customer: Customer) : Int
 
     @Delete
-    suspend fun deleteCustomer(customer: Customer)
+    suspend fun deleteCustomer(customer: Customer) : Int
 
     @Query("SELECT * FROM Customer ORDER BY id")
     fun getAllCustomers(): LiveData<List<Customer>>
+
+    @Query("DELETE FROM Customer")
+    suspend fun deleteAllCustomers() : Int
 
 }

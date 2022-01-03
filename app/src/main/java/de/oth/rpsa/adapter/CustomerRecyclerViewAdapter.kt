@@ -9,10 +9,12 @@ import de.oth.rpsa.databinding.ListcustomersBinding
 import de.oth.rpsa.model.Customer
 
 class CustomerRecyclerViewAdapter(
-    private val customerList: List<Customer>,
     private val clickListener: (Customer) -> Unit
 ) :
     RecyclerView.Adapter<myViewHolder>() {
+
+    private val customerList = ArrayList<Customer>()
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
 
@@ -31,6 +33,11 @@ class CustomerRecyclerViewAdapter(
         return customerList.size
     }
 
+    fun setCustomersList(customers: List<Customer>){
+        customerList.clear()
+        customerList.addAll(customers)
+    }
+
 
 }
 
@@ -41,6 +48,8 @@ class myViewHolder(val binding: ListcustomersBinding) : RecyclerView.ViewHolder(
         binding.firstnameTextview.text = customer.firstName
         binding.telephoneTextview.text = customer.telephone.toString()
         binding.emailTextview.text = customer.eMail
+        binding.vehicleTextview.text = customer.vehicle
+
 
         binding.listCustomerLayout.setOnClickListener {
             clickListener(customer)

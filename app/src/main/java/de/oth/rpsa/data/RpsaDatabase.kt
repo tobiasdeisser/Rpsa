@@ -5,13 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import de.oth.rpsa.model.Customer
-import de.oth.rpsa.model.Report
 
-@Database(entities = [Customer::class, Report::class], version = 1, exportSchema = false)
+@Database(entities = [Customer::class], version = 4, exportSchema = false)
 abstract class RpsaDatabase : RoomDatabase() {
 
     abstract fun customerDao(): CustomerDao
-    abstract fun reportDao(): ReportDao
 
     // Singleton pattern so that only one instance of RoomDatabase can be created.
     companion object {
@@ -30,7 +28,8 @@ abstract class RpsaDatabase : RoomDatabase() {
                     context.applicationContext,
                     RpsaDatabase::class.java,
                     "Customer"
-                ).build()
+                ).fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 return instance
             }
